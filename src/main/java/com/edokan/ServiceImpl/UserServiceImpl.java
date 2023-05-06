@@ -4,9 +4,7 @@ import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.password.PasswordEncoder;
+
 import org.springframework.stereotype.Service;
 
 import com.edokan.Entity.User;
@@ -18,8 +16,8 @@ public class UserServiceImpl implements UserService{
 
 	@Autowired
 	UserRepository userRepo;
-	 @Autowired
-	  private PasswordEncoder passwordEncoder;
+//	 @Autowired
+//	  private PasswordEncoder passwordEncoder;
 	
 	@Override
 	public List<User> getAllUser() {
@@ -38,13 +36,19 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public User saveUser(User user) {
-		System.out.println("UserserviceImpl saveUser method..");
-		String password = passwordEncoder.encode(user.getPassword());
-        user.setPassword(password);
-		return userRepo.save(user);
+		// TODO Auto-generated method stub
+		return null;
 	}
 
-	
-	
+//	@Override
+//	public User saveUser(User user) {
+//		System.out.println("UserserviceImpl saveUser method..");
+//		String password = passwordEncoder.encode(user.getPassword());
+//        user.setPassword(password);
+//		return userRepo.save(user);
+//	}
+//
+//	
+//	
 
 }
